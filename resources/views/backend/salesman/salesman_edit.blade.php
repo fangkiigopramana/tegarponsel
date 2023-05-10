@@ -38,6 +38,13 @@
                             </div>
                         </div>
                         <!-- end row -->
+                        <div class="row mb-3">
+                            <label for="companyaddress" class="col-sm-2 col-form-label">Salesman Company Address</label>
+                            <div class="form-group col-sm-10">
+                                <input class="form-control" name="companyaddress" type="text" value="{{ $salesman->companyaddress }}">
+                            </div>
+                        </div>
+                        <!-- end row -->
                         <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Salesman">
                         </form>
                     </div>
@@ -60,6 +67,9 @@
                 address: {
                     required : true,
                 },
+                companyaddress: {
+                    required : true,
+                },
             },
             messages :{
                 name: {
@@ -69,6 +79,9 @@
                     required : 'Please Enter Your Email',
                 },
                 address: {
+                    required : 'Please Enter Your Address',
+                },
+                companyaddress: {
                     required : 'Please Enter Your Address',
                 },
             },

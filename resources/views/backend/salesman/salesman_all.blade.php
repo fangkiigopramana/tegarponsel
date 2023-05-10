@@ -35,6 +35,7 @@
                             <th>Name</th>
                             <th>Mobile Number</th>
                             <th>Address</th>
+                            <th>Company Address</th>
                             <th>Action</th>
 
                         </thead>
@@ -48,6 +49,7 @@
                             <td> {{ $item->name }} </td>
                             <td> {{ $item->mobile_no }} </td>
                             <td> {{ $item->address }} </td>
+                            <td> {{ $item->companyaddress }} </td>
 
                             <td>
                         <a href="{{ route('salesman.edit', $item->id) }}" class="btn btn-info sm"

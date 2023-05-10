@@ -29,6 +29,7 @@ class SalesmanController extends Controller
             'name' => $request->name,
             'mobile_no' => $request->mobile_no,
             'address' => $request->address,
+            'companyaddress' => $request->companyaddress,
             'created_by' => Auth::user()->id,
             'created_at' => Carbon::now(),
         ]);
@@ -55,6 +56,7 @@ class SalesmanController extends Controller
             'name' => $request->name,
             'mobile_no' => $request->mobile_no,
             'address' => $request->address,
+            'companyaddress' => $request->companyaddress,
             'updated_by' => Auth::user()->id,
             'updated_at' => Carbon::now(),
         ]);
