@@ -26,8 +26,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('auth.login');
-})->middleware('auth');
+    return view('admin.admin_master');
+})->middleware(['auth']);
 
 Route::middleware(['auth'])->group(function () {
 

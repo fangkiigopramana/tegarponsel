@@ -35,9 +35,9 @@
                             <div class="mb-3">
                                 <a href="login" class="auth-logo">
                                     <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}"
-                                        height="30" class="logo-dark mx-auto" alt="">
+                                        width="150" class="logo-dark mx-auto" alt="">
                                     <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}"
-                                        height="30" class="logo-light mx-auto" alt="">
+                                        width="150" class="logo-light mx-auto" alt="">
                                 </a>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group mb-0 row mt-2">
+                                {{-- <div class="form-group mb-0 row mt-2">
                                     <div class="col-sm-7 mt-3">
                                         <a href="{{ route('password.request') }}" class="text-muted">
                                             <i class="mdi mdi-lock"></i> Forgot your password?</a>
@@ -78,7 +78,7 @@
                                         <a href="{{ route('register') }}" class="text-muted">
                                             <i class="mdi mdi-account-circle"></i> Create an account</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </form>
                         </div>
                         <!-- end -->

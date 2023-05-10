@@ -32,7 +32,7 @@
             <div class="invoice-title">
 
                 <h3>
-                    <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo" height="24"/> Tegar Ponsel
+                    <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo" width="100"/> Tegar Ponsel
                 </h3>
             </div>
             <hr>
