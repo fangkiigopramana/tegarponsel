@@ -5,19 +5,19 @@
             <div class="navbar-brand-box">
                 <a href="/dashboard" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-sm" height="22">
+                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-sm" width="105">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-dark" height="20">
+                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-dark" width="105">
                     </span>
                 </a>
 
                 <a href="/dashboard" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-sm-light" height="22">
+                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-sm-light" width="105">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-light" height="20">
+                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-light" width="105">
                     </span>
                 </a>
             </div>
