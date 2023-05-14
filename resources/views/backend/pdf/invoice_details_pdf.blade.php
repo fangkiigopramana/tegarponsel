@@ -158,7 +158,7 @@ $invoice_details = App\Models\InvoiceDetail::where('invoice_id',$payment->invoic
                 <td class="thick-line"></td>
                 <td class="thick-line text-center">
                     <strong>Subtotal</strong></td>
-                <td class="thick-line text-end">${{ $total_sum }}</td>
+                <td class="thick-line text-end">Rp{{ $total_sum }}</td>
             </tr>
             <tr>
                 <td class="no-line"></td>

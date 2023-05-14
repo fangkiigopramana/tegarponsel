@@ -8,16 +8,19 @@
                         <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-sm" width="105">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-dark" width="105">
+                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}"
+                        alt="logo-dark" width="105">
                     </span>
                 </a>
 
                 <a href="/dashboard" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-sm-light" width="105">
+                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}"
+                        alt="logo-sm-light" width="105">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}" alt="logo-light" width="105">
+                        <img src="{{ asset('backend/assets/images/logo-tegarponsel.png') }}"
+                        alt="logo-light" width="105">
                     </span>
                 </a>
             </div>
@@ -63,7 +66,8 @@
                     <!-- item-->
                     <a class="dropdown-item" href="{{ route('admin.profile') }}">
                         <i class="ri-user-line align-middle me-1"></i> Profile</a>
-                    <a class="dropdown-item" href="{{ route('change.password') }}"><i class="ri-wallet-2-line align-middle me-1"></i>Change Password</a>
+                    <a class="dropdown-item" href="{{ route('change.password') }}">
+                        <i class="ri-wallet-2-line align-middle me-1"></i>Change Password</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="{{ route('admin.logout') }}">
                         <i class="ri-shut-down-line align-middle me-1 text-danger"></i>
