@@ -100,7 +100,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('invoice.all') }}">All Invoice</a></li>
-                        <li><a href="{{ route('invoice.pending.list') }}">Approval Purchase</a></li>
+                        <li><a href="{{ route('invoice.pending.list') }}">Approval Invoice</a></li>
                         <li><a href="{{ route('print.invoice.list') }}">Print Invoice List</a></li>
                         <li><a href="{{ route('daily.invoice.report') }}">Daily Invoice Report</a></li>
                     </ul>
