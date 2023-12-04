@@ -20,9 +20,9 @@
             <div class="card">
                 <div class="card-body">
 
-                    <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float: right">
+                    {{-- <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float: right">
                         <i class="fas fa-plus-circle"> Purchase Pending</i></a>
-                    <br><br>
+                    <br><br> --}}
 
                     <h4 class="card-title">Purchase All Pending Data </h4>
 
@@ -33,10 +33,11 @@
                             <th>Sl</th>
                             <th>Purchase No</th>
                             <th>Date</th>
-                            <th>Supplier</th>
-                            <th>Category</th>
-                            <th>Qty</th>
+                            {{-- <th>Supplier</th> --}}
+                            {{-- <th>Category</th> --}}
                             <th>Product Name</th>
+                            <th>Customer Name</th>
+                            <th>Qty</th>
                             <th>Status</th>
                             <th>Action</th>
 
@@ -48,26 +49,28 @@
                         	@foreach($allData as $key => $item)
                         <tr>
                             <td> {{ $key+1}} </td>
-                            <td> {{ $item->purchase_no }} </td>
+                            <td> {{  $item->purchase_no }} </td>
                             <td> {{ date('d-m-Y',strtotime($item->date)) }} </td>
-                            <td> {{ $item['supplier']['name'] }} </td>
-                            <td> {{ $item['category']['name'] }} </td>
-                            <td> {{ $item->buying_qty }} </td>
-                            <td> {{ $item['product']['name'] }} </td>
+                            {{-- <td> {{ $item['supplier']['name'] }} </td>
+                            <td> {{ $item['category']['name'] }} </td> --}}
+                            <td> {{ $item->product_name }} </td>
+                            <td> {{ $item->customer_name }} </td>
+                            <td> {{ $item->quantity }} </td>
 
-                            @if($item->status == '0')
-                            <td> <span class="btn btn-warning">Pending</span> </td>
-                            @elseif ($item->status == '1')
-                            <td> <span class="btn btn-success">Approved</span> </td>
+                            @if ($item->is_paid == 0 && $item->is_sell == 0 )
+                                <td> <span class="btn btn-primary">Waiting Paid</span> </td>
+                            @elseif ($item->is_paid == 1 && $item->is_sell == 0)
+                                <td> <span class="btn btn-warning">Need Approved Paid</span> </td>
+                            @elseif ($item->is_paid == 1 && $item->is_sell == 1)
+                                <td> <span class="btn btn-success">Completed Paid</span> </td>
                             @endif
-                            <td>
-
-
-                        @if ($item->status == '0')
-                        <a href="{{ route('purchase.approve', $item->id) }}" class="btn btn-dark sm" title="Approved Data" id="approvedBtn">  <i class="fas fa-check-circle"></i> </a>
-                        @endif
-
-                            </td>
+                                <td>
+                                    @if ($item->is_paid == 1 && $item->is_sell == 0)
+                                        <a href={{ route('customer.cart.confirm', [$item->purchase_no]) }} class="btn btn-warning sm" title="Approve Data" id="approve">Approve</a>
+                                    @else
+                                    <a href="#" class="btn btn-success sm" title="Approve Data" id="approve">Completed</a>
+                                    @endif
+                                </td>
 
                         </tr>
                         @endforeach

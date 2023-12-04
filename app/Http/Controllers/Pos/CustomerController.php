@@ -5,17 +5,19 @@ namespace App\Http\Controllers\Pos;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
-use Auth;
 use Illuminate\Support\Carbon;
 use App\Models\Payment;
 use App\Models\PaymentDetail;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
     public function customerAll (Request $request)
     {
         // $customers = Customer::all();
-        $customers = Customer::latest()->get();
+        $customers = User::where('role', 'customer')->get();
 
         return view('backend.customer.customer_all', compact('customers'));
     }
@@ -53,7 +55,7 @@ class CustomerController extends Controller
     {
         $customer_id = $request->id;
 
-        Customer::findOrFail($customer_id)->update([
+        User::findOrFail($customer_id)->update([
             'name' => $request->name,
             'mobile_no' => $request->mobile_no,
             'address' => $request->address,
@@ -71,7 +73,7 @@ class CustomerController extends Controller
 
     public function customerDelete ($id)
     {
-        Customer::findOrFail($id)->delete();
+        User::findOrFail($id)->delete();
 
         $notification = array (
             'message' => 'Customer Deleted Successfully',

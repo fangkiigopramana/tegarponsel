@@ -68,6 +68,8 @@
                                         type="submit">Log In</button>
                                     </div>
                                 </div>
+                                <p>Belum punya akun <span class="text-primary fw-bold">customer</span>? <a class="fw-bold text-decoration-none" href={{ route('customer.register') }}>Registrasi</a> sekarang</p>
+
 
                                 {{-- <div class="form-group mb-0 row mt-2">
                                     <div class="col-sm-7 mt-3">

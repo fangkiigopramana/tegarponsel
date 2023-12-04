@@ -11,12 +11,17 @@ use App\Models\Supplier;
 use App\Models\Product;
 use Auth;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class PurchaseController extends Controller
 {
     public function purchaseAll (Request $request)
     {
-        $allData = Purchase::orderBy('date', 'desc')->orderBy('id', 'desc')->get();
+        $allData = DB::table('carts')
+        ->join('users', 'users.id', '=', 'carts.customer_id')
+        ->join('products', 'products.id', '=', 'carts.product_id')
+        ->select('carts.id AS purchase_no', 'users.name AS customer_name', 'carts.created_at AS date', 'products.name AS product_name', 'carts.quantity', 'carts.is_paid', 'carts.is_sell')
+        ->get();
 
         return view('backend.purchase.purchase_all', compact('allData'));
     }
@@ -81,7 +86,12 @@ class PurchaseController extends Controller
 
     public function purchasePending(Request $request)
     {
-        $allData = Purchase::orderBy('date', 'desc')->orderBy('id', 'desc')->where('status', '0')->get();
+        $allData = DB::table('carts')
+        ->join('users', 'users.id', '=', 'carts.customer_id')
+        ->join('products', 'products.id', '=', 'carts.product_id')
+        ->select('carts.id AS purchase_no', 'users.name AS customer_name', 'carts.created_at AS date', 'products.name AS product_name', 'carts.quantity', 'carts.is_paid', 'carts.is_sell')
+        ->where('is_paid', '=', '1', 'AND', 'is_sell', '=', '1')
+        ->get();
 
         return view('backend.purchase.purchase_pending', compact('allData'));
     }

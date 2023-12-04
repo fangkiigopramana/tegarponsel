@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('mobile_no')->nullable();
-            $table->string('address')->nullable();
-            $table->tinyInteger('status')->default('1');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('mobile_no')->unique();
+            $table->text('address');
+            $table->text('password');
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();
